@@ -1,4 +1,4 @@
-package com.devpuccino.demo.resttemplate.common.outbound
+package com.devpuccino.demo.resttemplate.response
 
 import com.devpuccino.demo.resttemplate.constant.Namespace.DEMO_SERVICE
 import com.devpuccino.demo.resttemplate.constant.ResponseStatus
