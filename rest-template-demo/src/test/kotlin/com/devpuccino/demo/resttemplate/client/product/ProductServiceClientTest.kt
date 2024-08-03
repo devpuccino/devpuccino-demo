@@ -22,13 +22,14 @@ import kotlin.test.Test
 @ExtendWith(SpringExtension::class)
 @SpringBootTest
 class ProductServiceClientTest {
+    @Autowired
+    private lateinit var productServiceClient: ProductServiceClient
 
     @Autowired
     @Qualifier("product-service-rest-template")
     private lateinit var restTemplate: RestTemplate
-    private  var mockServer: MockRestServiceServer? = null
-    @Autowired
-    private lateinit var productServiceClient: ProductServiceClient
+    private lateinit var mockServer: MockRestServiceServer
+
 
     @BeforeEach
     fun init(){
@@ -63,9 +64,9 @@ class ProductServiceClientTest {
                 }
             """.trimIndent()
             mockServer
-                ?.expect(ExpectedCount.once(), requestTo("https://192.168.7.100:18443/product-service/api/product"))
-                ?.andExpect(method(HttpMethod.GET))
-                ?.andRespond(withStatus(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(givenResponse))
+                .expect(ExpectedCount.once(), requestTo("https://192.168.7.100:18443/product-service/api/product"))
+                .andExpect(method(HttpMethod.GET))
+                .andRespond(withStatus(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(givenResponse))
             val actual = productServiceClient.getAllProduct()
             mockServer?.verify()
             println(actual)
