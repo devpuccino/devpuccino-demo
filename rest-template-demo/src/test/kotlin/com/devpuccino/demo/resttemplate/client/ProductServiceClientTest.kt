@@ -1,5 +1,6 @@
 package com.devpuccino.demo.resttemplate.client
 
+import com.devpuccino.demo.resttemplate.client.product.ProductServiceClient
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

@@ -1,8 +1,8 @@
 package com.devpuccino.demo.resttemplate.controller
 
-import com.devpuccino.demo.resttemplate.response.CommonResponse
-import com.devpuccino.demo.resttemplate.response.Status
-import com.devpuccino.demo.resttemplate.response.Product
+import com.devpuccino.demo.resttemplate.dto.response.CommonResponse
+import com.devpuccino.demo.resttemplate.dto.response.Status
+import com.devpuccino.demo.resttemplate.dto.response.Product
 import com.devpuccino.demo.resttemplate.service.ProductService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.DeleteMapping

@@ -1,4 +1,4 @@
-package com.devpuccino.demo.resttemplate.response
+package com.devpuccino.demo.resttemplate.dto.response
 
 import java.math.BigDecimal
 

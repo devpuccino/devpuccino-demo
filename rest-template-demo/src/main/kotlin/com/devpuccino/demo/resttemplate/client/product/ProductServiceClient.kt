@@ -1,5 +1,7 @@
-package com.devpuccino.demo.resttemplate.client
+package com.devpuccino.demo.resttemplate.client.product
 
+import com.devpuccino.demo.resttemplate.client.product.model.Product
+import com.devpuccino.demo.resttemplate.client.product.model.ProductServiceResponse
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpMethod
 import org.springframework.http.HttpStatus
@@ -21,10 +23,11 @@ class ProductServiceClient(val restTemplate: RestTemplate) {
         }
     }
 
-    fun addProduct(product: com.devpuccino.demo.resttemplate.response.Product):Boolean {
+    fun addProduct(product: com.devpuccino.demo.resttemplate.dto.response.Product):Boolean {
 
-    val httpEntity = HttpEntity<com.devpuccino.demo.resttemplate.response.Product>(product)
-    val responseEntity:ResponseEntity<ProductServiceResponse>  = restTemplate.exchange(url,HttpMethod.POST,httpEntity,ProductServiceResponse::class.java)
+    val httpEntity = HttpEntity<com.devpuccino.demo.resttemplate.dto.response.Product>(product)
+    val responseEntity:ResponseEntity<ProductServiceResponse>  = restTemplate.exchange(url,HttpMethod.POST,httpEntity,
+        ProductServiceResponse::class.java)
 
     return responseEntity.statusCode == HttpStatus.OK
 

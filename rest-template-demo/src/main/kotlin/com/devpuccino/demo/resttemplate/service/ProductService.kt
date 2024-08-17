@@ -1,7 +1,7 @@
 package com.devpuccino.demo.resttemplate.service
 
-import com.devpuccino.demo.resttemplate.client.ProductServiceClient
-import com.devpuccino.demo.resttemplate.response.Product
+import com.devpuccino.demo.resttemplate.client.product.ProductServiceClient
+import com.devpuccino.demo.resttemplate.dto.response.Product
 import org.springframework.stereotype.Service
 import java.math.BigDecimal
 

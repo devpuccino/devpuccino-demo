@@ -1,9 +1,9 @@
-package com.devpuccino.demo.resttemplate.client
+package com.devpuccino.demo.resttemplate.client.product.model
 
 import java.math.BigDecimal
 
 data class ProductServiceResponse(
-    val status:Status,
+    val status: Status,
     val data:List<Product>? = null
 )
 data class Status(
