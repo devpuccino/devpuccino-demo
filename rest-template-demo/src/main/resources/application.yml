@@ -2,3 +2,12 @@ server:
   port: 8080
   servlet:
     context-path: /rest-template-demo
+
+app:
+  product-service:
+    base-url: https://localhost:8443/product-service
+    endpoints:
+      get-all-product: /api/product
+      insert-product: /api/product
+      get-product-by-id: /api/product/{id}
+
